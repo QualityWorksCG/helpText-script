@@ -11,7 +11,7 @@ Navigate to the directory and install the npm packages using
   npm install
 ```
 
-Open the HelpText.js file using your editor and set the regoin, and location of the csv file where the information is located. See [demo video](https://drive.google.com/file/d/1eY2gaHyW_eW0KifMBeXa08BWlx8UUuLS/view?usp=sharing)
+Open the HelpText.js file using your editor and set the region, and location of the csv file where the information is located. See [demo video](https://drive.google.com/file/d/1eY2gaHyW_eW0KifMBeXa08BWlx8UUuLS/view?usp=sharing)
 
 Run the script by using the command.
 
