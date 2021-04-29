@@ -23,4 +23,8 @@ Run the script by using the command.
 
 An example of the csv file format required can be found [here](https://drive.google.com/file/d/1jrE8ynXxB8c8evYz2KSC4ZZgMhR-WgTv/view?usp=sharing)
 
+
+## Other Notes
+
+The credentials that are used to login to the user's aws account will be set using the aws-sdk package.
   
