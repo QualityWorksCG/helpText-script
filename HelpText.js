@@ -2,7 +2,7 @@ const fs = require('fs');
 
 var AWS = require("aws-sdk");
 // Set the region here
-AWS.config.update({ region: "us-east-1" });
+AWS.config.update({ region: "..." });
 
 // Create DynamoDB service object
 var ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" });
@@ -10,7 +10,7 @@ var ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" });
 const papa = require('papaparse')
 
 //Set CSV file location here
-var file = fs.createReadStream('./CMMC Help Text - Level 3c.csv')
+var file = fs.createReadStream('...')
 var csvData = []
 
 var results = papa.parse(file,{
