@@ -1,10 +1,12 @@
 const fs = require("fs");
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 const papa = require("papaparse");
 
 var AWS = require("aws-sdk");
 // Set the region here
 AWS.config.update({ region: process.env.REGION });
+
 
 // Create DynamoDB service object
 var ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" });
@@ -28,11 +30,11 @@ var results = papa.parse(file, {
           sectionId: {
             S: result.data.sectionId,
           },
-          controlId: {
-            S: result.data.controlId,
+          categoryId: {
+            S: result.data.categoryId || '',
           },
-          data: {
-            S: result.data.data,
+          PK: {
+            S: result.data.requirementId,
           },
           referenceId: {
             S: result.data.referenceId,
@@ -45,13 +47,14 @@ var results = papa.parse(file, {
     });
   },
   complete: function (results, file) {
-    var i, j, batch;
+    let i, j, batch;
 
     for (i = 0, j = csvData.length; i < j; i += process.env.BATCH_SIZE) {
-      batch = csvData.slice(i, i + process.env.BATCH_SIZE);
+      batch = csvData.slice(Number(i), Number(i) + Number(process.env.BATCH_SIZE));
+      var tableName = process.env.TABLE_NAME;
       const _results = {
         RequestItems: {
-          HelpText: [...batch],
+         'Posture3Stack-requirementhelptexttable7E3547FF-O9M1BHNMLWE1': [...batch],
         },
       };
 

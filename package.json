@@ -1,0 +1,28 @@
+{
+  "name": "helpText-script",
+  "version": "1.0.0",
+  "description": "# Prerequisite",
+  "main": "HelpText.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "import-dev": "NODE_ENV=dev node HelpText.js",
+    "import-qa": "NODE_ENV=qa node HelpText.js",
+    "import-prod": "NODE_ENV=prod node HelpText.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QualityWorksCG/helpText-script.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QualityWorksCG/helpText-script/issues"
+  },
+  "homepage": "https://github.com/QualityWorksCG/helpText-script#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1315.0",
+    "dotenv": "^16.0.3",
+    "papaparse": "^5.3.2"
+  }
+}
